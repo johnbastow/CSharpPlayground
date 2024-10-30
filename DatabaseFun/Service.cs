@@ -72,6 +72,11 @@ public class Service(
                     }
                 );
 
+                using var writer = new StreamWriter("../test-data/joined.csv");
+                using var csv = new CsvWriter(writer, CultureInfo.InvariantCulture);
+                csv.WriteRecords(joined);
+                writer.Flush();
+
             return 0;
         }
         catch(Exception ex){

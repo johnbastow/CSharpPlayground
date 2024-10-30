@@ -41,10 +41,10 @@ builder.Services.AddSingleton<IRecordReadProvider<ToDoItem>>(provider =>{
     return new SqlReadToDoItemProvider(logger, connectionString);
     });
 
-builder.Services.AddSingleton<IRecordReadProvider<Category>>(provider =>{
-    var logger = provider.GetRequiredService<ILogger<CsvReadProvider<Category>>>();
-    return new CsvReadProvider<Category>(logger, "../test-data/list-categories.csv");
-    });
+// builder.Services.AddSingleton<IRecordReadProvider<Category>>(provider =>{
+//     var logger = provider.GetRequiredService<ILogger<CsvReadProvider<Category>>>();
+//     return new CsvReadProvider<Category>(logger, "../test-data/list-categories.csv");
+//     });
     
 builder.Services.AddSingleton<ILoaderService<Category>, LoaderService<Category>>();
 builder.Services.AddSingleton<ILoaderService<User>, LoaderService<User>>();
