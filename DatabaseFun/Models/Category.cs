@@ -1,6 +1,6 @@
 ﻿using CsvHelper.Configuration.Attributes;
 
-namespace CSharpTodoListImporter.Models;
+namespace DatabaseFun.Models;
 
 public class Category
 {

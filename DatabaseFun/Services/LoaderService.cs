@@ -16,6 +16,7 @@ public class LoaderService<T>(IRecordReadProvider<T> recordProvider) : ILoaderSe
 
         while (row != null){
             allRows.Add(row);
+            row = this._recordProvider.GetRecord();
         }
 
         return allRows;

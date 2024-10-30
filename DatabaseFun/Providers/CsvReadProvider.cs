@@ -4,6 +4,7 @@ using CsvHelper;
 using CsvHelper.Configuration;
 using Microsoft.VisualBasic;
 using Microsoft.Extensions.Logging;
+using System.Diagnostics.CodeAnalysis;
 
 namespace DatabaseFun.Providers;
 
@@ -13,6 +14,7 @@ public class CsvReadProvider<T> : IRecordReadProvider<T>, IDisposable
     private StreamReader _reader { get; init; }
     private CsvReader _csvReader { get; init; }
 
+    [SetsRequiredMembers]
     public CsvReadProvider(ILogger<CsvReadProvider<T>> logger, string filePath){
             this._reader = new StreamReader(filePath);
             var csvConfig = new CsvConfiguration(CultureInfo.InvariantCulture){
@@ -33,7 +35,10 @@ public class CsvReadProvider<T> : IRecordReadProvider<T>, IDisposable
 
     public void Dispose()
     {
-        this._csvReader.Dispose();
-        this._reader.Dispose();
+        if (this._csvReader != null)
+            this._csvReader.Dispose();
+
+        if (this._reader != null)
+            this._reader.Dispose();
     }
 }

@@ -1,11 +1,11 @@
 ﻿using CsvHelper.Configuration.Attributes;
 
-namespace CSharpTodoListImporter.Models;
+namespace DatabaseFun.Models;
 
-public class ListItem 
+public class ToDoItem 
 {
     [Name("Item_ID")]
-    public int ListItemId { get; init; }
+    public int ToDoItemId { get; init; }
    
     [Name("Category_ID")]
     public int CategoryId { get; init; }

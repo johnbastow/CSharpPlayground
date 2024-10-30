@@ -1,0 +1,51 @@
+Item_ID,Category_ID,User_ID,To_Do_Item
+1,3,101,Go hiking
+2,4,102,Pay electricity bill
+3,3,101,Prepare taxes
+4,2,102,Meal prep for the week
+5,4,103,Back up computer
+6,4,104,Refill prescriptions
+7,1,104,Get a haircut
+8,2,101,Go hiking
+9,2,101,Practice guitar
+10,4,104,Clean the garage
+11,4,101,Pay electricity bill
+12,5,104,Complete project report
+13,5,103,Schedule dentist appointment
+14,5,101,Volunteer at shelter
+15,2,102,Write in journal
+16,3,102,Water plants
+17,1,104,Buy birthday gift
+18,1,103,Meal prep for the week
+19,4,104,Get a haircut
+20,4,102,Finish reading book
+21,5,104,Walk the dog
+22,1,102,Reply to emails
+23,5,104,Prepare presentation
+24,2,102,Learn a new language
+25,4,101,Do laundry
+26,3,101,Cook new recipe
+27,4,104,Organize digital files
+28,2,103,Meditate
+29,1,103,Pay electricity bill
+30,3,102,Learn a new language
+31,4,103,Clean the garage
+32,3,103,Book flight tickets
+33,4,102,Schedule dentist appointment
+34,5,103,Organize digital files
+35,2,102,Complete project report
+36,4,102,Update resume
+37,2,103,Complete project report
+38,2,102,Research vacation destinations
+39,5,101,Pay electricity bill
+40,4,104,Practice guitar
+41,1,103,Water plants
+42,3,104,Go jogging
+43,5,101,Back up computer
+44,4,103,Practice guitar
+45,3,101,Do laundry
+46,2,104,Wash car
+47,4,101,Walk the dog
+48,4,103,Pay electricity bill
+49,3,102,Plan birthday party
+50,1,101,Attend yoga class

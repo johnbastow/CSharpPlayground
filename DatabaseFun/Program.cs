@@ -8,9 +8,9 @@ using Microsoft.Extensions.Logging;
 
 // Adds reference to itself.
 using DatabaseFun;
+using DatabaseFun.Models;
 using DatabaseFun.Providers;
 using DatabaseFun.Services;
-using CSharpTodoListImporter.Models;
 
 // Create host application builder.
 HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
@@ -24,11 +24,31 @@ builder.Logging.AddFilter("Default", LogLevel.Debug);
 // Add logging to injectable services.
 builder.Services.AddLogging();
 
+var connectionString = "Server=localhost;Database=ToDoDB;User Id=sa;Password=Password7*test;Encrypt=True;TrustServerCertificate=True;";
+
+builder.Services.AddSingleton<IRecordReadProvider<User>>(provider =>{
+    var logger = provider.GetRequiredService<ILogger<SqlReadUserProvider>>();
+    return new SqlReadUserProvider(logger, connectionString);
+    });
+
+builder.Services.AddSingleton<IRecordReadProvider<Category>>(provider =>{
+    var logger = provider.GetRequiredService<ILogger<SqlReadCategoryProvider>>();
+    return new SqlReadCategoryProvider(logger, connectionString);
+    });
+
+builder.Services.AddSingleton<IRecordReadProvider<ToDoItem>>(provider =>{
+    var logger = provider.GetRequiredService<ILogger<SqlReadToDoItemProvider>>();
+    return new SqlReadToDoItemProvider(logger, connectionString);
+    });
+
 builder.Services.AddSingleton<IRecordReadProvider<Category>>(provider =>{
     var logger = provider.GetRequiredService<ILogger<CsvReadProvider<Category>>>();
     return new CsvReadProvider<Category>(logger, "../test-data/list-categories.csv");
     });
+    
 builder.Services.AddSingleton<ILoaderService<Category>, LoaderService<Category>>();
+builder.Services.AddSingleton<ILoaderService<User>, LoaderService<User>>();
+builder.Services.AddSingleton<ILoaderService<ToDoItem>, LoaderService<ToDoItem>>();
 
 // Add primary app service to injectable services.
 builder.Services.AddTransient<Service>();

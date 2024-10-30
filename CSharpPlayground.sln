@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseFun", "DatabaseFun\DatabaseFun.csproj", "{B97D57F3-9394-4EE4-AA82-6829C18E3FB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadCsv", "ReadCsv\ReadCsv.csproj", "{65A8FE67-0583-4573-8503-E322F1DBA129}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoSQLDB", "ToDoSQLDB\ToDoSQLDB.sqlproj", "{90942F65-F120-4E9A-A7B0-EAC61698C671}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B97D57F3-9394-4EE4-AA82-6829C18E3FB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B97D57F3-9394-4EE4-AA82-6829C18E3FB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B97D57F3-9394-4EE4-AA82-6829C18E3FB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B97D57F3-9394-4EE4-AA82-6829C18E3FB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65A8FE67-0583-4573-8503-E322F1DBA129}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65A8FE67-0583-4573-8503-E322F1DBA129}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65A8FE67-0583-4573-8503-E322F1DBA129}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65A8FE67-0583-4573-8503-E322F1DBA129}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90942F65-F120-4E9A-A7B0-EAC61698C671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90942F65-F120-4E9A-A7B0-EAC61698C671}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90942F65-F120-4E9A-A7B0-EAC61698C671}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90942F65-F120-4E9A-A7B0-EAC61698C671}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
