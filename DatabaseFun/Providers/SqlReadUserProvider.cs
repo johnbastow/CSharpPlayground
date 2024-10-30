@@ -32,9 +32,4 @@ public class SqlReadUserProvider : SqlReadProviderBase<User>
 
         return current;
     }
-
-    public void Dispose()
-    {
-        throw new NotImplementedException();
-    }
 }

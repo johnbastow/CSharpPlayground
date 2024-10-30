@@ -16,7 +16,6 @@ public class Service(
     ILoaderService<ToDoItem> toDoItemLoaderService,
     ILogger<Service> logger)
 {
-
     public async Task<int> RunService(){
         try{
             var categories = categoryLoaderService.GetAllRows();
@@ -43,11 +42,35 @@ public class Service(
             int toDoItemCount = 0;
 
             foreach(ToDoItem toDoItem in toDoItems){
-                logger.LogInformation("ID: {UserId}, Name: {Name}", toDoItem.ToDoItemId, toDoItem.Item );
+                logger.LogInformation("ID: {UserId}, Name: {Name}", toDoItem.ItemId, toDoItem.Item );
                 toDoItemCount++;
             }
 
             logger.LogInformation("# of To Do Items: {numUsers}", toDoItemCount);
+
+            var joined = toDoItems
+                .Join(
+                    categories,
+                    todoItem => todoItem.CategoryId,
+                    category => category.CategoryId,
+                    (todoItem, category) => new {
+                        ItemId = todoItem.ItemId,
+                        Item = todoItem.Item,
+                        CategoryName = category.Name,
+                        UserId = todoItem.UserId
+                    }
+                )
+                .Join(
+                    users,
+                    toDoItem => toDoItem.UserId,
+                    user => user.UserId,
+                    (toDoItem, user) => new {
+                    ToDoItemId = toDoItem.ItemId,
+                        ToDoItem = toDoItem.Item,
+                        CategoryName = toDoItem.CategoryName,
+                        Username = user.Username
+                    }
+                );
 
             return 0;
         }

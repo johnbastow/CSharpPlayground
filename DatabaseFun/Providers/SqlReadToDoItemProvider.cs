@@ -21,7 +21,7 @@ public class SqlReadToDoItemProvider : SqlReadProviderBase<ToDoItem>
         }
         
         if (this._reader is null){
-            this._reader = this._connection.Query<ToDoItem>("SELECT * FROM tblToDoItems").GetEnumerator();
+            this._reader = this._connection.Query<ToDoItem>("SELECT ItemID, CategoryID, UserID, ToDoItem AS Item FROM tblToDoItems").GetEnumerator();
             if (!this._reader.MoveNext()){
                 return null;
             }

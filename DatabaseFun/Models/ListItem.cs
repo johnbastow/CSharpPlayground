@@ -1,11 +1,13 @@
-﻿using CsvHelper.Configuration.Attributes;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
+using CsvHelper.Configuration.Attributes;
 
 namespace DatabaseFun.Models;
 
 public class ToDoItem 
 {
     [Name("Item_ID")]
-    public int ToDoItemId { get; init; }
+    public int ItemId { get; init; }
    
     [Name("Category_ID")]
     public int CategoryId { get; init; }
@@ -14,5 +16,5 @@ public class ToDoItem
     public int UserId { get; init; }
    
     [Name("To_Do_Item")]
-    public string Item { get; init; }
+    public string? Item { get; init; }
 }
